@@ -7,16 +7,24 @@
     import Button from './Components/Button'
     import Modal from './Components/Modal'
    // import Card from './Components/Card'
-    import { AiFillHtml5, AiFillPlayCircle } from 'react-icons/ai'
+    import { AiFillHtml5, AiFillPlayCircle, AiFillUnlock } from 'react-icons/ai'
     import CategoriesCard from './Components/page-components/CategoriesCard'
     import { DiCss3Full } from 'react-icons/di'
     import { SiJavascript } from 'react-icons/si'
     import OffersCard from './Components/page-components/OffersCard'
+    import { FaMapMarkedAlt,FaFileDownload } from 'react-icons/fa'
+
 
 
     function App() {
+      // STATES
       // modal state
       const [showCourseModal, setshowCourseModal] = useState(false)
+      
+      //offer state
+    const [showOffers, setshowOffers] = useState(false)
+      
+    //HANDLERS
       // modal handlers
       function handleStartLearingEvent() {
             setshowCourseModal(true);
@@ -24,9 +32,52 @@
       function handModalCancleEvent() {
               setshowCourseModal(false);
       }
+
+      //Offers handler
+      function handleShowOffers(){
+        showOffers===false? setshowOffers(true):setshowOffers(false);
+      }
+
+      //offers list
+
+      const offerList=[
+        {
+       icon_1: <AiFillUnlock className='i' size={"2em"}/>,
+       title: "Tons of content",
+       text: "We have library of over 100,000 videos that will help you learn to code"
+      },
+      {
+        icon_1: <FaMapMarkedAlt className='i' size={"2em"}/>,
+        title: "Tons of content",
+        text: "We have library of over 100,000 videos that will help you learn to code" 
+       },
+       {
+        icon_1: <FaFileDownload className='i' size={"2em"}/>,
+        title: "Tons of content",
+        text: "We have library of over 100,000 videos that will help you learn to code" 
+       }
+      ];
+
+      const moreOfferList=[
+        {
+          icon_1: <AiFillUnlock className='i' size={"2em"}/>,
+          title: "Tons of content",
+          text: "We have library of over 100,000 videos that will help you learn to code"
+         },
+         {
+           icon_1: <FaMapMarkedAlt className='i' size={"2em"}/>,
+           title: "Tons of content",
+           text: "We have library of over 100,000 videos that will help you learn to code" 
+          },
+          {
+           icon_1: <FaFileDownload className='i' size={"2em"}/>,
+           title: "Tons of content",
+           text: "We have library of over 100,000 videos that will help you learn to code" 
+          }
+    ]
       return (
         <>  
-        <div className='container cintainer-lg'> 
+        <div className='container container-lg'> 
         {/* modal */}
         {showCourseModal && (
         <Modal
@@ -78,9 +129,9 @@
           <div>
           <CategoriesCard 
           title={"Web Development"} 
-          icon_1={<AiFillHtml5 size={"4em"} className="icon icon html5"/>}
-          icon_2={<DiCss3Full size={"4em"} className='icon css3'/>}
-          icon_3={<SiJavascript size={"4em"} className="icon js"/>}
+          icon_1={<AiFillHtml5 size={"4em"} className="icon icon-html5"/>}
+          icon_2={<DiCss3Full size={"4em"} className='icon icon-css3'/>}
+          icon_3={<SiJavascript size={"4em"} className="icon icon-js"/>}
           btnIcon={<AiFillPlayCircle size={"2em"}/>}
           startLearningEvent={handleStartLearingEvent}
           >
@@ -98,23 +149,49 @@
           <CategoriesCard></CategoriesCard>
           <CategoriesCard></CategoriesCard>
           </div>         
-</div>
+            </div>
         </section>
         {/*offers*/}
         <section className="offers container container-md p-2">
-           <Title 
-           classes={"subtitle text-center mb-4"} 
-           text="Here's what you get"
-           />
-            <div className="offeres-container">
+  <Title 
+    classes={"subtitle text-center mb-4"} 
+    text="Here's what you get"
+  />
+  
+  {/* Fixed className from offeres-container to offers-container */}
+  <div className="offers-container">
+    {offerList.map((offer,index) => (
+      <OffersCard 
+        key={index} 
+        title={offer.title} 
+        text={offer.text}
+        icon_1={offer.icon_1}
+      />
+    ))}
+  </div>
 
-            <OffersCard/>
-
-            </div>
-
-
-
-        </section>
+  {showOffers && (
+    <div className="offers-container fadeIn">
+      {moreOfferList.map((offer,index) => (
+        <OffersCard 
+          key={index} 
+          title={offer.title} 
+          text={offer.text}
+          icon_1={offer.icon_1}
+        />
+      ))}
+    </div>
+  )}
+  
+  <a 
+    onClick={handleShowOffers}
+    style={{cursor: "pointer", textDecoration: "underline"}}
+  >
+    <h4 className='text-center text-primary mt-2'>
+      {showOffers ? "Show less" : "Show more..."}
+    </h4>
+  </a>
+</section>
 
 
 

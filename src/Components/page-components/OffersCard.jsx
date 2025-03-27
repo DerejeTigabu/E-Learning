@@ -10,22 +10,23 @@ export default function OffersCard({
     icon_3,
     btnIcon,
     startEvent,
-    cardHeader= true,
+    cardHeader= false,
     cardBody=true,
-    cardFooter=true,
+    cardFooter=false,
 
 }) {
 
   return (
-    <div className='card' style={{ maxWidth: 400 }}>
+    <div className='card offers text-center' style={{ maxWidth: 400 }}>
                {cardHeader && (
-                   <div className='card-header'>
-                       {icon_1}
+                   <div className='card-header bg-transparent'>
+                       
                        {icon_2}
                        {icon_3}
                    </div>
                )}
                <div className='card-body'>
+               {icon_1}
                    <h3 className='card-title'>{title?title:"card title"}</h3>
                    <p className='card-text'>
                        {text}
