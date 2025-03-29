@@ -3,9 +3,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    plugins: [],
+  content: ["./src/**/*.{html,js,jsx}"],
+
   },
   variants: {
     extend: {},
   },
   plugins: [],
 }
+
+

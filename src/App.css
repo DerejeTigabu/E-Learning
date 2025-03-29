@@ -7,14 +7,11 @@ a {
 }
 
 .title {
-  font-size: 4rem;
- 
+  font-size: 5rem;
 }
-
 
 .subtitle {
   font-size: 3.5rem;
-
 }
 
 :root {
@@ -129,7 +126,6 @@ form .btn {
 }
 
 .header-content {
-  text-align: center;
   max-width: 550px;
   animation: left 1s ease-in-out;
 }
@@ -275,13 +271,14 @@ form .btn {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
+ 
 }
 
 .offers-container .card,
 .testimonials-container .card {
   box-shadow: none;
   transition: 0.3s ease-out;
-
+}
 
 .offers-container .card i,
 .testimonials-container .card i {
@@ -307,6 +304,13 @@ form .btn {
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "testimonial-1 ." ". testimonial-2" "testimonial-3 ." ". testimonial-4";
   margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+
+
+
 }
 
 .testimonials-container .card {
@@ -550,8 +554,7 @@ p {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  /*display: none;*/
-  z-index: 100;
+  display: block;
 }
 
 .modal-content {
@@ -572,26 +575,4 @@ p {
   background-color: #333;
   color: #fff;
   cursor: pointer;
-}
-
-/* Add to your CSS file */
-.offers-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 1.5rem; /* Adjust spacing between cards */
-  margin: 2rem 0;
-}
-
-/* For responsive design */
-@media (max-width: 992px) {
-  .offers-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .offers-container {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-  }
-}
 }
