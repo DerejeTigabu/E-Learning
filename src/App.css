@@ -106,7 +106,7 @@ form .btn {
 
 .footer {
   height: 20vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .footer .nav-link:hover {
@@ -271,7 +271,6 @@ form .btn {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
- 
 }
 
 .offers-container .card,
@@ -304,13 +303,6 @@ form .btn {
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "testimonial-1 ." ". testimonial-2" "testimonial-3 ." ". testimonial-4";
   margin: 0 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    
-
-
-
 }
 
 .testimonials-container .card {
@@ -575,4 +567,36 @@ p {
   background-color: #333;
   color: #fff;
   cursor: pointer;
+}
+
+
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Layout */
+/* Scroll-to-top arrow */
+.goToTopArrow {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: black ;/* Green color - change as needed */
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.goToTopArrow:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }

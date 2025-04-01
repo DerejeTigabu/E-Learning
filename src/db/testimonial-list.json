@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "img": "profile-1",
+      "fullName": "Dereje Getachew",
+      "jobTitle": "Senior React Developer",
+      "twitterHandle": "@dereje_dev",
+      "text": "This platform completely transformed my workflow. The learning resources are top-notch and the community is incredibly supportive."
+      
+    },
+    {
+      "id": 2,
+      "img": "profile-2",
+      "fullName": "Sarah Johnson",
+      "jobTitle": "UX Designer",
+      "twitterHandle": "@sarahux",
+      "text": "As a designer transitioning to development, these courses gave me the perfect foundation. Highly recommend!"
+    },
+    {
+      "id": 3,
+      "img": "profile-3",
+      "fullName": "Michael Chen",
+      "jobTitle": "Tech Lead",
+      "twitterHandle": "@michaelcto",
+      "text": "Our entire engineering team upgraded their skills thanks to this platform. The hands-on projects were particularly valuable."
+    },
+    {
+      "id": 4,
+      "img": "profile-4",
+      "fullName": "Michael Chen",
+      "jobTitle": "Tech Lead",
+      "twitterHandle": "@michaelcto",
+      "text": "Our entire engineering team upgraded their skills thanks to this platform. The hands-on projects were particularly valuable."
+    }
+  ]
