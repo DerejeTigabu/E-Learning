@@ -22,7 +22,7 @@ export default function TestimonialCard({
             <p className='card-text'>{jobTitle}</p>
             <div className="twitter-handle">
               <BsTwitter size={"1.5em"} />
-              <span>{twitterHandle}</span>
+              <span>{twitterHandle}</span> 
             </div>
           </div>
         </div>

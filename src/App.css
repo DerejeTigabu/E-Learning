@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  position: absolute;
 }
 
 a {
@@ -98,6 +99,7 @@ form .btn {
   border-radius: 5px;
   padding: 0.5rem;
   width: 100%;
+  
 }
 
 .form-group input:focus {
@@ -599,4 +601,99 @@ p {
 .goToTopArrow:hover {
   opacity: 1;
   transform: scale(1.1);
+}
+
+
+
+{/*my style from deepseek*/}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form Styles */
+.form-control {
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.subtitle {
+  color: #666;
+}
+
+
+
+
+/* Active title styles */
+.active-title {
+  position: relative;
+  margin-top: 10px;
+  background: white;
+  padding: 100px;
+  border-radius: 40px;
+  margin-left: 200px;
+  border-left: 4px solid #4F46E5;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.active-title h2 {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.active-title p {
+  color: #4F46E5;
+  font-size: 0.9rem;
+}
+
+/* Form styles */
+.form-control {
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #4F46E5;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-weight: 600;
 }
