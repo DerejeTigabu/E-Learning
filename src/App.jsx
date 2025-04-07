@@ -1,4 +1,4 @@
-  import { useRef, useState,useEffect } from 'react'
+          import { useRef, useState,useEffect } from 'react'
           import './index.css';
           import './App.css'
           import Title from './Components/Title'
@@ -34,7 +34,7 @@
             LoginForm:false,
             registrationForm: false,
           })
-
+            const [login,setLogin] = useState(false)
           //scroll
           const [goToTopArrow,setGoToTopArrow]=useState(false);
             //referance
@@ -70,7 +70,11 @@
                 setForms({registrationForm:false,LoginForm:true})
                 setshowCourseModal(true);
               }
-
+              const handleLoginFormValidation= () => {
+                setForms({...forms, LoginForm: false});
+                setshowCourseModal(false);
+                setLogin(true);
+              }
                 {/*
                   // Update your state handler in App.jsx
                     const handleLoginSuccess = () => {
@@ -178,7 +182,7 @@
                       classes={'btn-primary text-light'}
                       //type={'button'}
                       text={'Try it free 30 days'}
-                      onClick={handleStartLearingEvent}
+                      onClick={!login ?  handleStartLearingEvent : () => window.alert("you are logged in ")}
                               
                     />
                     <Button
@@ -296,7 +300,7 @@
               title={"Access Denied"}
               text={"Please login first in order to access the content"} 
               cancelEvent={handModalCancleEvent}
-              loginEvent={handleShowLoginForm}
+              loginEvent={!login && handleShowLoginForm}
               />
               )}
               
@@ -322,6 +326,7 @@
               handleCancle={handleCancleLoginForm}
               showRegister={handleShowRegistrationForm}
               onLoginSuccess={handleShowLoginForm}
+              loggedin={handleLoginFormValidation}
               />
               </div>)}
                 

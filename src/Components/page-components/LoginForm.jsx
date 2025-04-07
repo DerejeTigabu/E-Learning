@@ -3,18 +3,25 @@ import Title from '../Title'
 import Button from '../Button'
 import FormGroup from '../FormGroup';
 
-export default function LoginForm({handleCancle,onLoginSuccess,showRegister}) {
-
+export default function LoginForm({
+  handleCancle,
+  onLoginSuccess,
+  showRegister,
+loggedin
+}) {
+//state
+const [email,setEmail]=useState("");
+const [password,setPassword]=useState("");
 
 const handleSubmit = (e) => {
     e.preventDefault();
-   //passwordRef.current.value==="" && passwordRef.current.focus();
    const events={
     email:email,
     password:password,
     id:Math.floor(Math.random()*1000),
    };
-   console.log(events)
+   //console.log(events)
+    validateLoginForm
    resetForm();
     onLoginSuccess();
 };
@@ -25,12 +32,16 @@ const handleSubmit = (e) => {
 
 }
 
+function validateLoginForm(){
+  (email.length===0 || password.length===0)?
+    alert("please fill all fields")
+ : loggedin();
+  }
 
 
 
-//state
-const [email,setEmail]=useState("");
-const [password,setPassword]=useState("");
+
+
 
 //referance
 let emailRef=useRef();
@@ -50,6 +61,7 @@ const changeEmail=(e)=>{
 //}
 
 //Effect
+
 useEffect(()=>{
    emailRef.current.focus();
 }, []);
